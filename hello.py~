@@ -6,3 +6,6 @@ def app(environ, start_response):
         start_response("200 OK",
             [("Content-Type", "text/plain")])
 	return iter([data])
+
+httpd = make_server('http://127.0.0.1/hello/',  app)
+httpd = make_server('http://127.0.0.1', 8080, app)
